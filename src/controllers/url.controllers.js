@@ -13,7 +13,9 @@ async function generateShortUrl(req, res){
         visitHistory: [] 
     });
 
-    return res.json({id: shortID});
+    return res.render('main', {
+        id: shortID
+    })
 };
 
 async function showRedirectUrl(req, res){
