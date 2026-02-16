@@ -22,9 +22,13 @@ async function userLogin(req,res){
         })
     }
 
-    const sessionId= v4();
-    setUser(sessionId, user);
-    res.cookie('uid', sessionId);
+    // const sessionId= v4();
+    // setUser(sessionId, user);
+    // res.cookie('uid', sessionId);
+    // return res.redirect('/');
+
+    const token= setUser(user);
+    res.cookie('uid', token);
     return res.redirect('/');
 }
 
